@@ -1,14 +1,16 @@
-import { dateList } from './dateList';
+import {
+	dateList
+} from './dateList';
 /**
  * @param {string} inputDate
  * input date should be in YYYY-MM-DD format A.D
  * @returns {string}
  */
 export default function fiscalCalculator(inputDate) {
-	/**
-	 * Only checking if it contains hyphen, first is 4 digit and a string
-	 * Should I use moment isValid? 🤔
-	 */
+  /**
+   * Only checking if it contains hyphen, first is 4 digit and a string
+   * Should I use moment isValid? 🤔
+   */
 	if (inputDate.indexOf('-') === 4 && typeof inputDate === 'string') {
 		return manipulateDate(inputDate);
 	} else {
