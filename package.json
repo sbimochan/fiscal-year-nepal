@@ -1,0 +1,32 @@
+{
+  "name": "fiscal-year",
+  "version": "1.0.0",
+  "description": "Upcoming fiscal year from today for Nepal",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel src --out-dir dist",
+    "start": "npx babel src --watch --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sbimochan/fiscal-year.git"
+  },
+  "keywords": [
+    "fiscal-year",
+    "date",
+    "nepali-date",
+    "nepali-fiscal-year"
+  ],
+  "author": "Bimochan Shrestha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sbimochan/fiscal-year/issues"
+  },
+  "homepage": "https://github.com/sbimochan/fiscal-year#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1"
+  }
+}
