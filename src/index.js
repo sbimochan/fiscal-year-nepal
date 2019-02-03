@@ -5,29 +5,29 @@ import { dateList } from './dateList';
  * @returns {string}
  */
 export default function fiscalCalculator(inputDate) {
-  /**
-   * Only checking if it contains hyphen, first is 4 digit and a string
-   * Should I use moment isValid? 🤔
-   */
-	if (inputDate.indexOf('-') === 4 && typeof(inputDate) === 'string') {
-    return manipulateDate(inputDate);
+	/**
+	 * Only checking if it contains hyphen, first is 4 digit and a string
+	 * Should I use moment isValid? 🤔
+	 */
+	if (inputDate.indexOf('-') === 4 && typeof inputDate === 'string') {
+		return manipulateDate(inputDate);
 	} else {
-    throw new TypeError('Date is not in right format.');
-  }
+		throw new TypeError('Date is not in right format.');
+	}
 }
 
-function manipulateDate(inputDate){
-  let splittedDate = {};
-  const splittedIntDate = inputDate
-    .split('-')
-    .map(stringDate => parseInt(stringDate));
-    
-  splittedDate.year = splittedIntDate[0];
-  splittedDate.month = splittedIntDate[1];
-  splittedDate.day = splittedIntDate[2];
-  const nextFiscalExpireDate = fiscalMachine(splittedDate);
+function manipulateDate(inputDate) {
+	let splittedDate = {};
+	const splittedIntDate = inputDate
+		.split('-')
+		.map(stringDate => parseInt(stringDate));
 
-  return nextFiscalExpireDate;
+	splittedDate.year = splittedIntDate[0];
+	splittedDate.month = splittedIntDate[1];
+	splittedDate.day = splittedIntDate[2];
+	const nextFiscalExpireDate = fiscalMachine(splittedDate);
+
+	return nextFiscalExpireDate;
 }
 
 function fiscalMachine(splittedDate) {
