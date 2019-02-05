@@ -17,6 +17,9 @@ console.log(upcomingFiscal);
 2019-07-16
 ```
 
+### Tests
+You can view tests or play with it in RunKit from [here](https://runkit.com/sbimochan/fiscal-year-test)
+
 ## License
 
 [MIT](LICENSE)
