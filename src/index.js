@@ -1,6 +1,4 @@
-import {
-  dateList
-} from './dateList';
+import {dateList} from './dateList';
 /**
  * @param {string} inputDate
  * input date should be in YYYY-MM-DD format A.D
@@ -27,9 +25,18 @@ function manipulateDate(inputDate) {
   splittedDate.year = splittedIntDate[0];
   splittedDate.month = splittedIntDate[1];
   splittedDate.day = splittedIntDate[2];
-  const nextFiscalExpireDate = fiscalMachine(splittedDate);
+  const lastDay = Object.keys(dateList)[
+    Object
+      .keys(dateList)
+      .length - 1
+  ];
+  if (splittedDate.year > lastDay) {
+    throw new RangeError('Provided date is out of range.');
+  } else {
+    const nextFiscalExpireDate = fiscalMachine(splittedDate);
 
-  return nextFiscalExpireDate;
+    return nextFiscalExpireDate;
+  }
 }
 
 function fiscalMachine(splittedDate) {
@@ -39,18 +46,15 @@ function fiscalMachine(splittedDate) {
       fiscalYear = splittedDate.year + 1;
       break;
 
-    case splittedDate.month >= 7 &&
-    splittedDate.day > dateList[splittedDate.year]:
+    case splittedDate.month >= 7 && splittedDate.day > dateList[splittedDate.year]:
       fiscalYear = splittedDate.year + 1;
       break;
 
-    case splittedDate.month >= 7 &&
-    splittedDate.day === dateList[splittedDate.year]:
+    case splittedDate.month >= 7 && splittedDate.day === dateList[splittedDate.year]:
       fiscalYear = splittedDate.year + 1;
       break;
 
-    case splittedDate.month >= 7 &&
-    splittedDate.day < dateList[splittedDate.year]:
+    case splittedDate.month >= 7 && splittedDate.day < dateList[splittedDate.year]:
       fiscalYear = splittedDate.year;
       break;
 

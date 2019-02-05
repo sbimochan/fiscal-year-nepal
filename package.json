@@ -1,6 +1,6 @@
 {
   "name": "fiscal-year-nepal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Upcoming fiscal expire date from given date for Nepal in A.D",
   "main": "dist/index.js",
   "scripts": {
