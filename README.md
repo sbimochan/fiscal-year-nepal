@@ -4,9 +4,15 @@ This was created to find upcoming fiscal last date from input date for Nepal(B.S
 
 The list containing corresponding year and day was manually collected using calender.
 
+> Currently supports date only from 2011 to 2033 A.D
+
+### Installation
+
+```yarn add fiscal-year-nepal```
+
 ### Usage
 
-```
+```javascript
 import fiscalCalculator from 'fiscal-year-nepal';
 
 let upcomingFiscal = fiscalCalculator('2018-7-18');
